@@ -77,14 +77,15 @@
     }
     .item{
       border-bottom: 1px solid #eee;
-      padding: .2rem .2rem;
+      padding: .1rem .2rem;
 
       background-color: #fff;
       .tit{
         position: relative;
+        padding:.1rem 0;
         i{
 
-          @include sc(.24rem,#999);
+          @include sc(.28rem,#999);
           margin-right: .1rem;
 
           &.open{
@@ -92,13 +93,12 @@
           }
           position: absolute;
           left:0;
-          top: .05rem;
+          top: .15rem;
         }
-        margin-bottom: .1rem;
         .name{
           padding-left: .4rem;
           flex: 1;
-          @include sc(.26rem,#333)
+          @include sc(.28rem,#333)
           font-weight: 500;
           &.folder{
             color: #999;
@@ -143,7 +143,7 @@
           }
           .info{
             .p1{
-              @include sc(.26rem,#444)
+              @include sc(.27rem,#444)
             }
             .p2{
               color: #999;
