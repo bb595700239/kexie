@@ -1,6 +1,6 @@
 <template>
   <form class="index-searchbox flex-box">
-    <input type="search" placeholder="请输入关键词..." v-model="searchVal" @keydown.enter.prevent="searchTarget" @change="searchAdd">
+    <input type="search" placeholder="请输入关键词..." v-model="searchVal" @keyup="searchTarget" @change="searchAdd" >
     <i class="iconfont icon-close" @click.prevent="searchRemove" v-if="searchVal.length"></i>
     <i class="iconfont icon-search" @click.prevent="searchTarget" v-else></i>
   </form>

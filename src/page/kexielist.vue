@@ -1500,7 +1500,7 @@
       }
     },
     mounted () {
-
+      this.$store.state.list = this.list
 
     },
     components: {

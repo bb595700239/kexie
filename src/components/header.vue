@@ -3,8 +3,8 @@
     <div class="back"  v-if="goBack" @click="$router.go(-1)">
       <i class="iconfont icon-back_android"></i>
     </div>
-    <div class="searchbar-con" v-if="searchKey">
-      <search-bar></search-bar>
+    <div class="searchbar-con">
+      <slot name="searchbox"></slot>
     </div>
 
     <div style="flex: 1" v-if="headTitle">
@@ -20,7 +20,6 @@
 </template>
 
 <script>
-  import searchBar from './searchBar'
   import {mapState, mapActions, mapMutations} from 'vuex'
   export default {
     data () {
@@ -41,7 +40,6 @@
 
     },
     components: {
-      searchBar,
     },
   }
 </script>

@@ -7,7 +7,7 @@ import getters from './getters'
 Vue.use(Vuex)
 
 const state = {
-  searchKey: '',//首页，列表，分类页搜索
+  list: '',
 
 
 
