@@ -1,6 +1,6 @@
 <template>
-<div class="warp page1-1">
-    <header-guide :goBack="true" :search="true" headTitle="组织成员">
+<div class="warp page1-2">
+    <header-guide :goBack="true" searchKey="true">
     </header-guide>
     <div class="main-box scroll" style="height:calc(100vh - .86rem);">
       <scroller ref="my_scroller">
@@ -15,21 +15,18 @@
             </ul>
           </div>
         </div>-->
-        <ul class="items">
-        <item :model='model' v-for='(model,index) in list' :key="index"></item>
-        </ul>
+        <div class="items">
+        <itemsearch :model='model' v-for='(model,index) in list' :key="index"></itemsearch>
+        </div>
       </scroller>
     </div>
-  <transition name="router-slid" mode="out-in">
-    <router-view></router-view>
-  </transition>
   </div>
 </template>
 <script>
   import * as getData from '../service/getData'
   import * as mobile from '../config/mUtils'
   import headerGuide from '../components/header'
-  import item from '../components/item'
+  import itemsearch from '../components/itemsearch.vue'
   export default {
     data () {
       return {
@@ -1505,7 +1502,7 @@
     },
     components: {
       headerGuide,
-      item
+      itemsearch
     },
 
     computed: {
@@ -1521,16 +1518,8 @@
   @import '../assets/css/mixin';
   .items{
     margin-top: .2rem;
+    background-color: #fff;
 
-  }
-
-
-  .router-slid-enter-active, .router-slid-leave-active {
-    transition: all .4s;
-  }
-  .router-slid-enter, .router-slid-leave-active {
-    transform: translate3d(0, -2rem, 0);
-    opacity: 0;
   }
 
 </style>

@@ -3,6 +3,9 @@
     <div class="back"  v-if="goBack" @click="$router.go(-1)">
       <i class="iconfont icon-back_android"></i>
     </div>
+    <div class="searchbar-con" v-if="searchKey">
+      <search-bar></search-bar>
+    </div>
 
     <div style="flex: 1" v-if="headTitle">
     <section class="title-head ellipsis">
@@ -10,13 +13,14 @@
     </section>
     </div>
     <div class="search"  v-if="search">
-      <i class="iconfont icon-search"></i>
+      <i class="iconfont icon-search" @click="$router.push('/kxlist/search')"></i>
     </div>
 
   </header>
 </template>
 
 <script>
+  import searchBar from './searchBar'
   import {mapState, mapActions, mapMutations} from 'vuex'
   export default {
     data () {
@@ -28,7 +32,7 @@
 
 
     },
-    props: ['headTitle', 'goBack', 'search'],
+    props: ['searchKey','headTitle', 'goBack', 'search'],
     computed: {
 
     },
@@ -37,6 +41,7 @@
 
     },
     components: {
+      searchBar,
     },
   }
 </script>
