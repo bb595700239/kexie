@@ -37,7 +37,37 @@
                 <div class="d2"><p class="p1">982</p><p class="p2">激活人数</p></div>
               </div>
             </div>
-          </li>
+          </li><li class="flex-box">
+          <div class="pic"><img src="" alt=""></div>
+          <div class="info">
+            <div class="d1">省科协</div>
+            <div class="flex-box">
+              <div class="d2"><p class="p1">10</p><p class="p2">组织</p></div>
+              <div class="d2"><p class="p1">1024</p><p class="p2">总人数</p></div>
+              <div class="d2"><p class="p1">982</p><p class="p2">激活人数</p></div>
+            </div>
+          </div>
+        </li><li class="flex-box">
+          <div class="pic"><img src="" alt=""></div>
+          <div class="info">
+            <div class="d1">省科协</div>
+            <div class="flex-box">
+              <div class="d2"><p class="p1">10</p><p class="p2">组织</p></div>
+              <div class="d2"><p class="p1">1024</p><p class="p2">总人数</p></div>
+              <div class="d2"><p class="p1">982</p><p class="p2">激活人数</p></div>
+            </div>
+          </div>
+        </li><li class="flex-box">
+          <div class="pic"><img src="" alt=""></div>
+          <div class="info">
+            <div class="d1">省科协</div>
+            <div class="flex-box">
+              <div class="d2"><p class="p1">10</p><p class="p2">组织</p></div>
+              <div class="d2"><p class="p1">1024</p><p class="p2">总人数</p></div>
+              <div class="d2"><p class="p1">982</p><p class="p2">激活人数</p></div>
+            </div>
+          </div>
+        </li>
         </ul>
       </scroller>
     </div>
@@ -73,14 +103,16 @@
 <style scoped lang="scss">
   @import '../assets/css/mixin';
   .list{
-    padding: 0 .2rem;
-
+    padding: 0 .26rem;
+    margin-top: .18rem;
+    padding-bottom: .18rem;
     li{
 
-      margin-top: .2rem;
+      margin-bottom: .26rem;
       background-color: #fff;
       border-radius: .1rem;
-      padding: .2rem;
+      padding: .26rem;
+      padding-right: .1rem;
       position: relative;
       &.arr:after{
         content: '';
@@ -93,8 +125,8 @@
         top:.3rem;
       }
       .pic{
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.38rem;
+        height: 1.38rem;
         border: 1px solid #eee;
         border-radius: .1rem;
         overflow: hidden;

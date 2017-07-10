@@ -15,9 +15,11 @@
             </ul>
           </div>
         </div>-->
+        <div style="padding-bottom: .2rem;">
         <ul class="items">
         <item :model='model' v-for='(model,index) in list' :key="index"></item>
         </ul>
+        </div>
       </scroller>
     </div>
   <transition name="router-slid" mode="out-in">
@@ -1522,6 +1524,7 @@
   .items{
     margin-top: .2rem;
 
+
   }
 
 
@@ -1529,7 +1532,7 @@
     transition: all .4s;
   }
   .router-slid-enter, .router-slid-leave-active {
-    transform: translate3d(0, -2rem, 0);
+    transform: translate3d(2rem, 0, 0);
     opacity: 0;
   }
 

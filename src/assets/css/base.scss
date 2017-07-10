@@ -146,3 +146,22 @@ html,body{
   z-index: 204;
 
 }
+.items{
+  background-color: #fff;
+  .li{
+    padding:.25rem;
+    margin: 0 .2rem;
+    @include sc(.26rem,$blue);
+    border-bottom: 1px solid #eee;
+
+    &.li2{
+      @include sc(.26rem,#333);
+
+    }
+  }
+}
+.nodata{
+  padding: .3rem;
+  text-align: center;
+  color: #999;
+}
