@@ -16,18 +16,18 @@
 
 
 
-    <div @click='toggle' v-if="!model.body">
-      <div class="tit flex-box"><i class="iconfont icon-unfold" :class="[open?'open':'']" v-if='isFolder'></i><i class="iconfont icon-move" v-else></i><div class="name" :class="[!isFolder?'folder':'']" >{{model.data.menuName}}</div><div class="num">{{model.data.currentNum}}/{{model.data.totalNum}}</div></div>
+    <div @click='toggle' v-if="!model.gender">
+      <div class="tit flex-box"><i class="iconfont icon-unfold" :class="[open?'open':'']" v-if='isFolder'></i><i class="iconfont icon-move" v-else></i><div class="name" :class="[!isFolder?'folder':'']" >{{model.name}}</div><!--<div class="num">{{model.data.currentNum}}/{{model.data.totalNum}}</div>--></div>
     </div>
-    <ul v-if="model.body">
-      <li class="flex-box users" v-for="(item,index) in model.body" :key="index">
-        <div v-if="item.pic" class="pic flex-box"><img :src="item.pic" alt=""></div>
-        <div  class="pic text" v-else>{{item.name | filename}}</div>
-        <div class="info"><p class="p1">{{item.name}}</p><p class="p2">{{item.position}}</p></div>
+    <ul v-if="model.gender">
+      <li class="flex-box users">
+        <div v-if="model.photo" class="pic flex-box"><img :src="model.photo" alt=""></div>
+        <div  class="pic text" v-else>{{model.name | filename}}</div>
+        <div class="info"><p class="p1">{{model.name}}</p><p class="p2">{{model.open_id}}</p></div>
       </li>
     </ul>
     <ul v-show="open" v-if='isFolder'>
-      <items v-for='(cel,index) in model.childTreeNode' :model='cel' :key="index">
+      <items v-for='(cel,index) in model.children' :model='cel' :key="index">
       </items>
     </ul>
   </li>
@@ -47,7 +47,7 @@
     },
     computed: {
       isFolder() {
-        return this.model.childTreeNode && this.model.childTreeNode.length
+        return this.model.children && this.model.children.length
       }
     },
 
@@ -141,11 +141,18 @@
             }
           }
           .info{
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
             .p1{
               @include sc(.27rem,#444)
             }
             .p2{
               color: #999;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
             }
           }
         }

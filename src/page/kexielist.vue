@@ -1502,7 +1502,10 @@
       }
     },
     mounted () {
-      this.$store.state.list = this.list
+      getData.getOrgStructure().then(res => {
+        this.list = res.data.tree
+      })
+      //this.$store.state.list = this.list
 
     },
     components: {
