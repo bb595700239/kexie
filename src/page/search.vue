@@ -1569,6 +1569,7 @@
   @import '../assets/css/mixin';
 
   .index-searchbox{
+    margin-right: .3rem;
     border: 1px solid #e2e3e3; background-color: #fff; padding: .1rem .2rem; border-radius: .3rem;
     display: flex;
   input{  background: none;font-size: .23rem;flex: 1;}
