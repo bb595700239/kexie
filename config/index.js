@@ -23,13 +23,13 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8808,
+    port: 7808,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://hpweb.qisheng.me/',
+        target: 'http://api2api.780.cn/',
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/api'

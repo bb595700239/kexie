@@ -11,11 +11,13 @@ const setpromise = data => {
 }
 
 
-  var mainshops = (page, commodityTypeId = '', keyWord = '', sortFlag = '') => fetch('GET', '/api/index/commodity/commodityList', {pageIndex: page, commodityTypeId: commodityTypeId, keyWord: keyWord, sortFlag: sortFlag})
+var mainshops = (page, commodityTypeId = '', keyWord = '', sortFlag = '') => fetch('GET', '/api/index/commodity/commodityList', {pageIndex: page, commodityTypeId: commodityTypeId, keyWord: keyWord, sortFlag: sortFlag})
+
+var getOrgStructure = () => fetch('GET', '/api/index/getOrgStructure?apps=hs&bloc_id=8&org_id=18', {})
 
 
 
 
 
 
-export {mainshops}
+export {mainshops,getOrgStructure}
