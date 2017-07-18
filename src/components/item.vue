@@ -16,10 +16,10 @@
 
 
 
-    <div @click='toggle' v-if="!model.gender">
+    <div @click='toggle' v-if="!model.open_id">
       <div class="tit flex-box"><i class="iconfont icon-unfold" :class="[open?'open':'']" v-if='isFolder'></i><i class="iconfont icon-move" v-else></i><div class="name" :class="[!isFolder?'folder':'']" >{{model.name}}</div><!--<div class="num">{{model.data.currentNum}}/{{model.data.totalNum}}</div>--></div>
     </div>
-    <ul v-if="model.gender">
+    <ul v-else>
       <router-link tag="li" to="/allxuehui" class="flex-box users">
         <div v-if="model.photo" class="pic flex-box"><img :src="model.photo" alt=""></div>
         <div  class="pic text" v-else>{{model.name | filename}}</div>
