@@ -33,13 +33,14 @@
     },
     mounted () {
       getData.getBlocs().then(res => {
-        this.list=res.data
-        this.list.forEach((item,index) => {
-          getData.getBlocStatisticData(item.bloc_id).then(res => {
-            //_this.$set(_this.list, index, listsub)
-            this.list[index].orgs=res.data.orgs_num
-            this.list[index].user=res.data.user_num
-            this.list[index].active=res.data.active_user_num
+        res.data.forEach((item,index) => {
+          getData.getBlocStatisticData(item.bloc_id).then(subres => {
+            let obj={}
+            obj.orgs=subres.data.orgs_num
+            obj.user=subres.data.user_num
+            obj.active=subres.data.active_user_num
+            this.list.push(Object.assign(res.data[index], obj))
+
           })
         })
       })
