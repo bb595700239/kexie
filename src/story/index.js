@@ -8,9 +8,6 @@ Vue.use(Vuex)
 
 const state = {
   list: '',
-
-
-
 }
 
 export default new Vuex.Store({

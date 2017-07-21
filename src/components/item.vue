@@ -1,21 +1,6 @@
 <template>
 
   <li class="item">
-
-    <!--<div class="items">
-      <div class="item" v-show="open" v-if='isFolder'>
-        <div class="tit flex-box"  @click='toggle'><i class="iconfont icon-playfill" :class="[open?'fa-folder-open':'fa-folder']"></i><div class="name">会长</div><div class="num">1/1</div></div>
-        <ul>
-          <li class="flex-box">
-            <div class="pic flex-box"><img src="../assets/images/user.png" alt=""></div>
-            <div class="info"><p class="p1">马云</p><p class="p2">阿里巴巴董事长</p></div>
-          </li>
-        </ul>
-      </div>
-    </div>-->
-
-
-
     <div @click='toggle' v-if="!model.open_id">
       <div class="tit flex-box"><i class="iconfont icon-unfold" :class="[open?'open':'']" v-if='isFolder'></i><i class="iconfont icon-move" v-else></i><div class="name" :class="[!isFolder?'folder':'']" >{{model.name}}</div><!--<div class="num">{{model.data.currentNum}}/{{model.data.totalNum}}</div>--></div>
     </div>

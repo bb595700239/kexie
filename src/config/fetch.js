@@ -79,7 +79,7 @@ export default async(type = 'GET', url = '', data = {}, method = 'fetch') => {
       }
 
       requestObj.open(type, url, true);
-      requestObj.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+      requestObj.setRequestHeader('Content-type','application/json');
 
       //新加逻辑
       requestObj.setRequestHeader('from', is_weixn());

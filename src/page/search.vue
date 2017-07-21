@@ -21,7 +21,6 @@
           </div>
         </div>-->
         <div v-if="html" class="items" v-html="html">
-
         <!--<itemsearch :model='model' v-for='(model,index) in list' :key="index"></itemsearch>-->
         </div>
         <div class="nodata" v-else>sorry,没有您想要的信息</div>
@@ -76,7 +75,13 @@
             if(item.open_id){
 
                 if(item.name.indexOf(_this.searchVal)>=0){
-                  _this.html+=`<div class="li" onclick="alert(${index})">${item.name}</div>`
+                  var sex='';
+                  if(item.gender==127){
+                    sex=`<svg class="move_liner"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#man"></use></svg>`
+                  }else{
+                    sex=`<svg class="move_liner"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#women"></use></svg>`
+                  }
+                  _this.html+=`<div class="li flex-box" onclick="alert(${index})">${sex}${item.name}</div>`
                 }
             }else{
               if(item.name.indexOf(_this.searchVal)>=0){

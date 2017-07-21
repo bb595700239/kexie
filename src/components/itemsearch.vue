@@ -5,21 +5,6 @@
     <div v-if="model.body && item.name.indexOf($store.state.searchKey)>=0 " v-for="(item,index) in model.body" :key="index">{{item.name}}</div>
     <items v-for='(cel,index) in model.childTreeNode' :model='cel' :key="index">
     </items>
-    <!--<div class="items">
-      <div class="item" v-show="open" v-if='isFolder'>
-        <div class="tit flex-box"  @click='toggle'><i class="iconfont icon-playfill" :class="[open?'fa-folder-open':'fa-folder']"></i><div class="name">会长</div><div class="num">1/1</div></div>
-        <ul>
-          <li class="flex-box">
-            <div class="pic flex-box"><img src="../assets/images/user.png" alt=""></div>
-            <div class="info"><p class="p1">马云</p><p class="p2">阿里巴巴董事长</p></div>
-          </li>
-        </ul>
-      </div>
-    </div>-->
-
-
-
-
   </div>
 </template>
 

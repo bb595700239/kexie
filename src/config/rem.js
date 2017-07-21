@@ -1,5 +1,5 @@
 /**
- * Created by Administrator on 2017/5/9.
+ * Created by Joubn on 2017/7/21.
  */
 (function (doc, win) {
   let docEl = doc.documentElement

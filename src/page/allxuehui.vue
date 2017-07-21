@@ -5,69 +5,17 @@
     <div class="main-box scroll" style="height:calc(100vh - .86rem);">
       <scroller ref="my_scroller">
         <ul class="list">
-          <li class="flex-box arr">
+          <li class="flex-box arr" v-for="(item,index) in list" :key="index">
             <div class="pic"><img src="" alt=""></div>
             <div class="info">
-              <div class="d1">省科协</div>
+              <div class="d1">{{item.name}}</div>
               <div class="flex-box">
-                <div class="d2"><p class="p1">10</p><p class="p2">组织</p></div>
-                <div class="d2"><p class="p1">1024</p><p class="p2">总人数</p></div>
-                <div class="d2"><p class="p1">982</p><p class="p2">激活人数</p></div>
+                <div class="d2"><p class="p1">{{item.orgs}}</p><p class="p2">组织</p></div>
+                <div class="d2"><p class="p1">{{item.user}}</p><p class="p2">总人数</p></div>
+                <div class="d2"><p class="p1">{{item.active}}</p><p class="p2">激活人数</p></div>
               </div>
             </div>
           </li>
-          <li class="flex-box">
-            <div class="pic"><img src="" alt=""></div>
-            <div class="info">
-              <div class="d1">省科协</div>
-              <div class="flex-box">
-                <div class="d2"><p class="p1">10</p><p class="p2">组织</p></div>
-                <div class="d2"><p class="p1">1024</p><p class="p2">总人数</p></div>
-                <div class="d2"><p class="p1">982</p><p class="p2">激活人数</p></div>
-              </div>
-            </div>
-          </li>
-          <li class="flex-box">
-            <div class="pic"><img src="" alt=""></div>
-            <div class="info">
-              <div class="d1">省科协</div>
-              <div class="flex-box">
-                <div class="d2"><p class="p1">10</p><p class="p2">组织</p></div>
-                <div class="d2"><p class="p1">1024</p><p class="p2">总人数</p></div>
-                <div class="d2"><p class="p1">982</p><p class="p2">激活人数</p></div>
-              </div>
-            </div>
-          </li><li class="flex-box">
-          <div class="pic"><img src="" alt=""></div>
-          <div class="info">
-            <div class="d1">省科协</div>
-            <div class="flex-box">
-              <div class="d2"><p class="p1">10</p><p class="p2">组织</p></div>
-              <div class="d2"><p class="p1">1024</p><p class="p2">总人数</p></div>
-              <div class="d2"><p class="p1">982</p><p class="p2">激活人数</p></div>
-            </div>
-          </div>
-        </li><li class="flex-box">
-          <div class="pic"><img src="" alt=""></div>
-          <div class="info">
-            <div class="d1">省科协</div>
-            <div class="flex-box">
-              <div class="d2"><p class="p1">10</p><p class="p2">组织</p></div>
-              <div class="d2"><p class="p1">1024</p><p class="p2">总人数</p></div>
-              <div class="d2"><p class="p1">982</p><p class="p2">激活人数</p></div>
-            </div>
-          </div>
-        </li><li class="flex-box">
-          <div class="pic"><img src="" alt=""></div>
-          <div class="info">
-            <div class="d1">省科协</div>
-            <div class="flex-box">
-              <div class="d2"><p class="p1">10</p><p class="p2">组织</p></div>
-              <div class="d2"><p class="p1">1024</p><p class="p2">总人数</p></div>
-              <div class="d2"><p class="p1">982</p><p class="p2">激活人数</p></div>
-            </div>
-          </div>
-        </li>
         </ul>
       </scroller>
     </div>
@@ -80,11 +28,21 @@
   export default {
     data () {
       return {
-
+        list:[],
       }
     },
     mounted () {
-
+      getData.getBlocs().then(res => {
+        this.list=res.data
+        this.list.forEach((item,index) => {
+          getData.getBlocStatisticData(item.bloc_id).then(res => {
+            //_this.$set(_this.list, index, listsub)
+            this.list[index].orgs=res.data.orgs_num
+            this.list[index].user=res.data.user_num
+            this.list[index].active=res.data.active_user_num
+          })
+        })
+      })
 
     },
     components: {
